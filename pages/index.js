@@ -23,7 +23,10 @@ function Menu() {
 function Header() {
     return (
         <div>
-            Header
+            <img src="banner" />
+            <img src="fotinho-do-perfil" />
+            Mario Souto
+            Cargo
         </div>
     )
 }
