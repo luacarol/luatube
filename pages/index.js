@@ -59,7 +59,9 @@ function Timeline(propriedades) {
 
     return (
         <div>
-            {playlistNames}
+            {playlistNames.map(function(playlistName) {
+                return playlistName;
+            })}
         </div>
     )
 }
