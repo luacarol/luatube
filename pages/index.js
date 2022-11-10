@@ -60,16 +60,24 @@ function Timeline(propriedades) {
             {playlistNames.map((playlistName) => {
                 const videos = propriedades.playlists[playlistName];
 
-                return videos.map((video) => {
-                    return (
-                        <a href={video.url} >
-                            <img src={video.thumb} />
-                            <span>
-                                {video.title}
-                            </span>
-                        </a>
-                    )
-                });
+                return (
+                    <section>
+                        <h2>{playlistName}</h2>
+
+                        <div>
+                            {videos.map((video) => {
+                                return (
+                                    <a href={video.url} >
+                                        <img src={video.thumb} />
+                                        <span>
+                                            {video.title}
+                                        </span>
+                                    </a>
+                                )
+                            })}
+                        </div>
+                    </section>
+                )
             })}
         </div>
     )
