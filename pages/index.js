@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 function HomePage() {
     const estilosDaHomePage = { backgroundColor: "red" }
-    console.log(config.playlists)
 
     return (
         <div style={estilosDaHomePage}>
@@ -54,13 +53,23 @@ function Header() {
 }
 
 function Timeline(propriedades) {
-    console.log("Dentro do componente ", propriedades.playlists)
     const playlistNames = Object.keys(propriedades.playlists)
 
     return (
         <div>
-            {playlistNames.map(function(playlistName) {
-                return playlistName;
+            {playlistNames.map((playlistName) => {
+                const videos = propriedades.playlists[playlistName];
+
+                return videos.map((video) => {
+                    return (
+                        <a href={video.url} >
+                            <img src={video.thumb} />
+                            <span>
+                                {video.title}
+                            </span>
+                        </a>
+                    )
+                });
             })}
         </div>
     )
