@@ -2,6 +2,7 @@ import config from "../config.json";
 import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
+import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
     const estilosDaHomePage = { 
@@ -37,6 +38,7 @@ const StyledHeader = styled.div`
         border-radius: 50%;
     }
     .user-info {
+        margin-top: 50px;
         display: flex;
         align-items: center;
         width: 100%;
@@ -63,7 +65,7 @@ function Timeline(propriedades) {
     const playlistNames = Object.keys(propriedades.playlists)
 
     return (
-        <div>
+        <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = propriedades.playlists[playlistName];
 
@@ -86,6 +88,6 @@ function Timeline(propriedades) {
                     </section>
                 )
             })}
-        </div>
+        </StyledTimeline>
     )
 }
